@@ -1,6 +1,3 @@
-# Yanir_portfolio
-My data science portfolio
--------------------------
 
 ## Project 1: Time Series Prediction Project
 * data set:
