@@ -2,7 +2,7 @@
 My data science portfolio
 -------------------------
 
-## project 1: Time Series Prediction Project
+## Project 1: Time Series Prediction Project
 * data set:
 * Used Packages:
 * Rows number:
@@ -11,7 +11,7 @@ My data science portfolio
 * Description:
 
 
-## project 1: RNF python implementation
+## Project 2: RNF python implementation
 * data set:
 * Used Packages:
 * Rows number:
@@ -19,7 +19,7 @@ My data science portfolio
 * Results
 * Description:
 
-## Photo Embaded - Deep Learning
+## Project 3: Photo Embaded - Deep Learning
 * data set:
 * Used Packages:
 * Rows number:
