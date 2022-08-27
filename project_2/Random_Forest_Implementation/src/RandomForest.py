@@ -65,6 +65,21 @@ class RandomForest():
         return x, y
 
     def fit(self, X, y):
+        """
+           Build a forest of trees from the training set (X, y). By default it uses bootstrap method.
+
+           Parameters
+           ----------
+           X : {array-like} of shape (n_samples, n_features)
+               The training input samples. If empty than an error is raise
+
+           y : array-like of shape (n_samples,) or (n_samples, n_outputs)
+               The target values
+
+           Returns
+           -------
+           self : object
+           """
         self.setX(X)
         self.sety(y)
         self.setUniqueVals()
@@ -76,6 +91,17 @@ class RandomForest():
             self.setTreeDict(tree, new_tree, rand_features)
 
     def one_tree_prediction(self, tree_key, x):
+        """
+        Predicting, based on a given observation, for a week classifier, the response variable
+        Parameters
+        ----------
+        :param tree_key{int} - the identifier of a tree in the forest
+        :param x{array -like} - a given observation to predict by
+
+        :return:
+        ----------
+         prediction
+        """
 
         y_indexes = self.tree_dict[tree_key][1]
         x_new = [[x[0][i] for i in y_indexes]] if len(x) == 2 else [[x[i] for i in y_indexes]]
@@ -83,6 +109,15 @@ class RandomForest():
         return y_hat[0]
 
     def predict_row(self, x):
+        """
+        Make a prediction for the forest with a given observation
+        ----------
+         :param tree_key{int} - the identifier of a tree in the forest
+
+        :return:
+        ----------
+        prediction
+        """
         y_hat_distribution_series = {y_val: 0 for y_val in self.y_unique_val}
         tree_predictions = map(lambda tree: self.one_tree_prediction(tree, x), self.tree_dict.keys())
         for y_hat in tree_predictions:

@@ -1,10 +1,8 @@
-import RandomForest as rnf
+from Random_Forest_Implementation.src import RandomForest as rnf_
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import f1_score
-
-#
 
 if __name__ == '__main__':
 
@@ -17,7 +15,7 @@ if __name__ == '__main__':
 
     """Comperison between Sklearn RNF and my RNF"""
     for i in range(20):
-        rn = rnf.RandomForest(max_features=8, forest_size=100, max_depth=20)
+        rn = rnf_.RandomForest(max_features=8, forest_size=100, max_depth=20)
         rn.fit(X_train, y_train.values.reshape(-1, 1))
         y_hat = rn.predict(X_test)
         f1 = f1_score(y_test, y_hat)
