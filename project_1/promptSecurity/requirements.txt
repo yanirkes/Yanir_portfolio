@@ -1,0 +1,8 @@
+apikey
+streamlit
+langchain
+openai
+numpy
+nltk
+gensim
+spacy
